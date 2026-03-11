@@ -212,7 +212,26 @@ console.log('Personaggi con genere aggiornato:', starWarsCharacters)
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
+console.log('Lunghezza prima:', charactersNames.length)
+
+for (let i = 0; i < femaleCharacters.length; i++) {
+  let indexToRemove = charactersNames.indexOf(femaleCharacters[i].name)
+  if (indexToRemove !== -1) {
+    charactersNames.splice(indexToRemove, 1)
+  }
+}
+
+console.log('Lunghezza dopo:', charactersNames.length)
+console.log('Nomi senza personaggi femminili:', charactersNames)
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+let randomIndex = Math.floor(Math.random() * starWarsCharacters.length)
+let randomCharacter = starWarsCharacters[randomIndex]
+
+console.log(randomCharacter.name)
+console.log(randomCharacter.height)
+console.log(randomCharacter.mass)
+console.log(randomCharacter.eye_color)
+console.log(randomCharacter.gender)
